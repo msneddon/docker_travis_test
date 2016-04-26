@@ -6,7 +6,7 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-before-install:
+before_install:
   - git clone https://github.com/kbase/kb_sdk
   - cd kb_sdk
   - make sdkbase
