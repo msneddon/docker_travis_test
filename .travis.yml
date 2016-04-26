@@ -6,6 +6,12 @@ language: python
 python:
   - "2.7"
 # command to install dependencies
-#install: None
+before-install:
+  - git clone https://github.com/kbase/kb_sdk
+  - cd kb_sdk
+  - make sdkbase
+  - docker run -d -p 5000:5000 --name registry registry:2
+  - docker ps -a
+
 # command to run tests
 script: ./run.sh
